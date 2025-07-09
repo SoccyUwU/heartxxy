@@ -1,16 +1,16 @@
 {
-  name: "pregxxy.book.patterns.spells.dummy_spells",
+  name: "pregxxy.book.patterns.spells.breed",
   category: "hexcasting:patterns/spells",
-  icon: "minecraft:spruce_sign",
+  icon: "minecraft:golden_carrot",
   advancement: "hexcasting:root",
   pages: [
     {
       type: "hexcasting:pattern",
-      op_id: "pregxxy:congratulate",
-      anchor: "pregxxy:congratulate",
+      op_id: "pregxxy:pregxxy",
+      anchor: "pregxxy:pregxxy",
       input: "entity",
       output: "",
-      text: "pregxxy.book.patterns.spells.dummy_spells.congratulate",
+      text: "pregxxy.book.patterns.spells.breed.details",
     },
   ],
 }
