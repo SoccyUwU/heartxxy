@@ -1,0 +1,8 @@
+{
+  hexdoc: {
+    pregxxy: {
+      title: "Pregxxy Book",
+      description: "Pregxxy addon for Hex Casting",
+    },
+  }
+}

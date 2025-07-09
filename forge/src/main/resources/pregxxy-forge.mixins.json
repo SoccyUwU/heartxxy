@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "io.github.soccyuwu.pregxxy.forge.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+    "MixinDatagenMain"
+  ],
+  "plugin": "io.github.soccyuwu.pregxxy.forge.mixin.ForgeMixinConfigPlugin",
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

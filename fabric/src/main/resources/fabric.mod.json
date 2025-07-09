@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "pregxxy",
+  "version": "${version}",
+  "name": "Pregxxy",
+  "description": "Pregxxy addon for Hex Casting",
+  "authors": [
+    "SoccyUwU"
+  ],
+  "contact": {
+    "homepage": "https://soccyuwu.github.io/pregxxy",
+    "sources": "https://github.com/SoccyUwU/pregxxy"
+  },
+  "license": "MIT",
+  "icon": "assets/pregxxy/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [{
+      "adapter": "kotlin",
+      "value": "io.github.soccyuwu.pregxxy.fabric.FabricPregxxy"
+    }],
+    "client": [{
+      "adapter": "kotlin",
+      "value": "io.github.soccyuwu.pregxxy.fabric.FabricPregxxyClient"
+    }],
+    "modmenu": [{
+      "adapter": "kotlin",
+      "value": "io.github.soccyuwu.pregxxy.fabric.FabricPregxxyModMenu"
+    }]
+  },
+  "mixins": [
+    "pregxxy-common.mixins.json",
+    "pregxxy-fabric.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "${versions.minecraft}",
+    "fabricloader": ">=${versions.fabric_loader}",
+    "fabric-api": ">=${versions.fabric_api}",
+    "fabric-language-kotlin": ">=${versions.kotlin_fabric}",
+    "architectury": ">=${versions.architectury}",
+    "hexcasting": ">=${versions.hexcasting_dependency}",
+    "cloth-config": ">=${versions.clothConfig}"
+  },
+  "suggests": {
+    "modmenu": ">=${versions.modMenu}"
+  }
+}
