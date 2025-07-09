@@ -6,7 +6,6 @@
   "client": [
   ],
   "mixins": [
-    "AllayAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

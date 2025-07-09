@@ -8,7 +8,6 @@ import at.petrak.hexcasting.api.casting.getEntity
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.misc.MediaConstants
 import io.github.soccyuwu.pregxxy.casting.mishaps.MishapCantBreed
-import io.github.soccyuwu.pregxxy.mixin.AllayAccessor
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
 import net.minecraft.world.entity.Entity
@@ -41,7 +40,7 @@ object OpBreed : SpellAction {
                 target.age = 0
                 target.setInLove(env.castingEntity as? Player)
             } else if(target is Allay) {
-                (target as AllayAccessor).invokeDuplicateAllay()
+                target.duplicateAllay();
                 target.level().broadcastEntityEvent(target, 18.toByte())
                 target.level().playSound(
                     env.castingEntity as Player,
