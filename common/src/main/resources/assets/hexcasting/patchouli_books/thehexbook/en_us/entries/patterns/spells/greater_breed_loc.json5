@@ -1,0 +1,20 @@
+{
+  name: "pregxxy.book.patterns.spells.super_pregxxy.name",
+  category: "hexcasting:patterns/great_spells",
+  icon: "minecraft:golden_carrot",
+  advancement: "hexcasting:root",
+  pages: [
+    {
+      type: "hexcasting:pattern",
+      op_id: "pregxxy:greater_pregxxy",
+      anchor: "pregxxy:greater_pregxxy",
+      input: "entity",
+      output: "",
+      text: "pregxxy.book.patterns.spells.super_pregxxy.details.1",
+    },
+    {
+      type: "patchouli:text",
+      text: "pregxxy.book.patterns.spells.super_pregxxy.details.2"
+    }
+  ],
+}
