@@ -13,6 +13,7 @@ import net.minecraft.sounds.SoundSource
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.animal.Animal
 import net.minecraft.world.entity.animal.allay.Allay
+import net.minecraft.world.entity.npc.Villager
 import net.minecraft.world.entity.player.Player
 
 object OpBreed : SpellAction {
@@ -23,7 +24,7 @@ object OpBreed : SpellAction {
         env.assertEntityInRange(target)
         if (target !is Allay) {
             if (target !is Animal || target.age < 0) {
-                throw MishapCantBreed(target)
+                throw MishapCantBreed(target, false)
             }
         }
 
@@ -36,11 +37,14 @@ object OpBreed : SpellAction {
 
     private data class Spell(val target: Entity) : RenderedSpell {
         override fun cast(env: CastingEnvironment) {
+            if(target is Villager){
+                target.canBreed()
+            }
             if(target is Animal){
                 target.age = 0
                 target.setInLove(env.castingEntity as? Player)
             } else if(target is Allay) {
-                target.duplicateAllay();
+                target.duplicateAllay()
                 target.level().broadcastEntityEvent(target, 18.toByte())
                 target.level().playSound(
                     env.castingEntity as Player,
