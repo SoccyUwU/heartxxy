@@ -8,7 +8,7 @@ version = "${version}"
 displayName = "Pregxxy"
 logoFile = "assets/pregxxy/icon.png"
 authors = "SoccyUwU"
-description = "Pregxxy addon for Hex Casting"
+description = "Pregxxy adds several patterns related to breeding."
 
 [[dependencies.pregxxy]]
 modId = "forge"

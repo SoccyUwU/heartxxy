@@ -2,8 +2,11 @@
   "pregxxy.book.patterns.spells.pregxxy.name": "Pregxxy Patterns",
   "pregxxy.book.patterns.spells.pregxxy.breed.details.1": "Puts the target in breeding mood. Mishaps if used on a creature which can't breed. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.",
   "pregxxy.book.patterns.spells.pregxxy.breed.details.2": "A subtle but rudimentary manipulation of minds, only animals are simple enough to be receptive. Creatures of pure media may also be affected...",
+  "pregxxy.book.patterns.spells.nurture.name": "Nurture",
+  "pregxxy.book.patterns.spells.nurture.details.1": "Instantly ages the target for the given amount of time. The unit of time is one twentieth of a second by my count.",
+  "pregxxy.book.patterns.spells.nurture.details.2": "There are several peculiarities with this spell. It appears to be able to reverse aging in a way: it is able to shorten the time between production of offsprings for mature targets. However, care must be taken, as too much regressing will quite literally revert the subject into a child.$(p)Its exact cost is in dusts (x/2)^2 + x + 2, x being units of time skipped divided by 100.",
   "pregxxy.book.patterns.spells.super_pregxxy.name": "Greater Breed",
-  "pregxxy.book.patterns.spells.super_pregxxy.details.1": "Instantly kills the target, splitting its matter and media to form two children. Creatures without any form of children will crystallize into media instead. Inanimate creatures cause the spell to mishap.",
+  "pregxxy.book.patterns.spells.super_pregxxy.details.1": "Instantly kills the target, splitting its matter and media to form two children. Creatures without any form of offspring will crystallize into media instead. Inanimate entities cause the spell to mishap.",
   "pregxxy.book.patterns.spells.super_pregxxy.details.2": "Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$ per point of health on the target. Crystallization yields two $(l:items/amethyst)$(item)Amethyst Dust/$ per point of health.$(p)Hostile creatures will shrug off the attempt unless on the brink of death.$(p)Legend has it that even the largest game may fall prey to this effect...",
 
   hexcasting: {
@@ -11,6 +14,7 @@
       "pregxxy:": {
         pregxxy : "Breed",
         greater_pregxxy: "Greater Breed",
+        nurture: "Nurture",
       },
 
       // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
@@ -24,6 +28,7 @@
     mishap: {
       cantBreed: "needs a valid progenitor but got %s",
       cantBreedStrong: "needs a suitably weak-willed creature but got %s",
+      cantNurture: "needs a child but got %s",
     },
   },
 
