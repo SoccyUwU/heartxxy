@@ -1,0 +1,40 @@
+{
+  "pregxxy.book.patterns.spells.pregxxy.name": "Pregxxy 图案",
+  "pregxxy.book.patterns.spells.pregxxy.breed.details.1": "让目标进入繁衍状态。对无法繁衍的生物使用会招致事故。消耗大约 1 个$(l:items/amethyst)$(item)紫水晶碎片/$。",
+  "pregxxy.book.patterns.spells.pregxxy.breed.details.2": "这是一种不易察觉的简单意识操纵手段，只有动物的意识才足够简单，可受影响。完全由媒质组成的生物也会受影响，但这种操纵手段太过简单，操纵的结果不够可靠。",
+  "pregxxy.book.patterns.spells.nurture.name": "滋养",
+  "pregxxy.book.patterns.spells.nurture.details.1": "立即让目标成长给定时间。从我的使用经历看来，时间的单位是 1/20 秒。",
+  "pregxxy.book.patterns.spells.nurture.details.2": "这个法术有几个怪处。它似乎能在某种程度上逆转衰老：它可以缩短成年目标两次繁衍间的间隔。不过，如此使用时必须小心谨慎，过度逆转会将目标变回幼年状态。$(p)此法术的消耗是 (x/2)^2 + x + 2，以紫水晶粉计，x 为跳过的时间除以 100 的商。",
+  "pregxxy.book.patterns.spells.super_pregxxy.name": "卓越繁衍",
+  "pregxxy.book.patterns.spells.super_pregxxy.details.1": "立即杀死目标，将构成它的物质和媒质重组成两个幼年个体。无法产生后代的生物会晶化为媒质。对无生命的实体使用会招致事故。",
+  "pregxxy.book.patterns.spells.super_pregxxy.details.2": "目标每有 1 点生命值消耗大约 1 个$(l:items/amethyst)$(item)紫水晶碎片/$。晶化时，每有 1 点生命值产出 2 个$(l:items/amethyst)$(item)紫水晶粉/$。$(p)敌对生物能轻松抵御这个法术，除非它们处于濒死状态。$(p)有传言称，就算是最硕大的猎物也会屈服于这个法术……",
+
+  hexcasting: {
+    action: {
+      "pregxxy:": {
+        pregxxy : "繁衍",
+        greater_pregxxy: "卓越繁衍",
+        nurture: "滋养",
+      },
+
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+        "pregxxy:": {
+          pregxxy: "繁衍",
+        },
+      },
+    },
+    mishap: {
+      cantBreed: "需要有效的可繁衍生物，而实际给定了%s",
+      cantBreedStrong: "需要意识较弱的合适生物，而实际给定了%s",
+      cantNurture: "需要一个幼年生物，而实际给定了%s",
+    },
+  },
+
+  text: {
+    pregxxy: {
+      pregxxy: "让目标实体繁衍！",
+    },
+  },
+}
