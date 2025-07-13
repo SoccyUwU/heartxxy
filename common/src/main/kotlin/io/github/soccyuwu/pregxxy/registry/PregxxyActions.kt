@@ -14,9 +14,9 @@ object PregxxyActions : PregxxyRegistrar<ActionRegistryEntry>(
     HexRegistries.ACTION,
     { HexActions.REGISTRY },
 ) {
-    val BREED = make("pregxxy", HexDir.NORTH_EAST, "eewewwewewweweewdeaqq", OpBreed)
+    val BREED = make("pregxxy", HexDir.NORTH_EAST, "eewewwwwdwwwweweewwdeaqq", OpBreed)
     val GBREED = make("greater_pregxxy", HexDir.NORTH_EAST, "wewewewwwwwewewwwwwewewewqadewwdwweweaqwwaeeawww", OpGreaterBreed)
-    val NURTURE = make("nurture", HexDir.SOUTH_EAST, "deaqqqwawwa", OpNurture)
+    val NURTURE = make("nurture", HexDir.SOUTH_EAST, "deaqwaw", OpNurture)
 
     private fun make(name: String, startDir: HexDir, signature: String, action: Action) =
         make(name, startDir, signature) { action }
