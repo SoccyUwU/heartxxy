@@ -17,6 +17,7 @@ import net.minecraft.world.entity.boss.enderdragon.EnderDragon
 import net.minecraft.world.entity.item.FallingBlockEntity
 import net.minecraft.world.entity.monster.Enemy
 import net.minecraft.world.entity.monster.Monster
+import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Blocks
 import kotlin.math.max
@@ -78,9 +79,9 @@ object OpGreaterBreed : SpellAction {
             val numCharged = dustWorth / 10
             val numShard = (dustWorth - 10 * numCharged) / 5
             val numDust = (dustWorth - 10 * numCharged - 5 * numShard)
-            target.spawnAtLocation(HexItems.CHARGED_AMETHYST, numCharged)
-            target.spawnAtLocation(Items.AMETHYST_SHARD, numShard)
-            target.spawnAtLocation(HexItems.AMETHYST_DUST, numDust)
+            target.spawnAtLocation(ItemStack(HexItems.CHARGED_AMETHYST, numCharged))
+            target.spawnAtLocation(ItemStack(Items.AMETHYST_SHARD, numShard))
+            target.spawnAtLocation(ItemStack(HexItems.AMETHYST_DUST, numDust))
         }
     }
 }
