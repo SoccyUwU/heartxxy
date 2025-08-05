@@ -1,7 +1,7 @@
 {
   "pregxxy.book.patterns.spells.pregxxy.name": "Pregxxy Patterns",
   "pregxxy.book.patterns.spells.pregxxy.breed.details.1": "Puts the target in breeding mood. Mishaps if used on a creature which can't breed. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.",
-  "pregxxy.book.patterns.spells.pregxxy.breed.details.2": "A subtle but rudimentary manipulation of minds, only animals are simple enough to be receptive. Creatures of pure media are also affected, but the rudimentary nature of this manipulation makes the outcome rather unreliable.",
+  "pregxxy.book.patterns.spells.pregxxy.breed.details.2": "A subtle but rudimentary manipulation of minds, only animals are simple enough to be receptive. Rumors say that creatures of pure media are also affected, but they must be wrong: I can not seem to obtain any results.",
   "pregxxy.book.patterns.spells.nurture.name": "Nurture",
   "pregxxy.book.patterns.spells.nurture.details.1": "Instantly ages the target for the given amount of time. The unit of time is one twentieth of a second by my count.",
   "pregxxy.book.patterns.spells.nurture.details.2": "There are several peculiarities with this spell. It appears to be able to reverse aging in a way: it is able to shorten the time between production of offsprings for mature targets. However, care must be taken, as too much regressing will quite literally revert the subject into a child.$(p)Its exact cost is in dusts (x/2)^2 + x + 2, x being units of time skipped divided by 100.",
