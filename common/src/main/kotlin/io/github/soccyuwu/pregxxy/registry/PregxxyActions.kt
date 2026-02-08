@@ -7,6 +7,7 @@ import at.petrak.hexcasting.api.casting.math.HexPattern
 import at.petrak.hexcasting.common.lib.HexRegistries
 import at.petrak.hexcasting.common.lib.hex.HexActions
 import io.github.soccyuwu.pregxxy.casting.actions.spells.OpBreed
+import io.github.soccyuwu.pregxxy.casting.actions.spells.OpGetAge
 import io.github.soccyuwu.pregxxy.casting.actions.spells.OpNurture
 import io.github.soccyuwu.pregxxy.casting.actions.spells.great.OpGreaterBreed
 
@@ -17,6 +18,8 @@ object PregxxyActions : PregxxyRegistrar<ActionRegistryEntry>(
     val BREED = make("pregxxy", HexDir.NORTH_EAST, "eewewwwwdwwwweweewwdeaqq", OpBreed)
     val GBREED = make("greater_pregxxy", HexDir.NORTH_EAST, "wewewewwwwwewewwwwwewewewqadewwdwweweaqwwaeeawww", OpGreaterBreed)
     val NURTURE = make("nurture", HexDir.SOUTH_EAST, "deaqwaw", OpNurture)
+    val GETAGE = make("get_age", HexDir.SOUTH_EAST, "deaqqwa", OpGetAge)
+
 
     private fun make(name: String, startDir: HexDir, signature: String, action: Action) =
         make(name, startDir, signature) { action }

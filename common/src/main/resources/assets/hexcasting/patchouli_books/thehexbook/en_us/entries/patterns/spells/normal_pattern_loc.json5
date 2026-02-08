@@ -27,6 +27,14 @@
     {
       type: "patchouli:text",
       text: "pregxxy.book.patterns.spells.nurture.details.2",
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "pregxxy:get_age",
+      anchor: "pregxxy:get_age",
+      input: "entity",
+      output: "number",
+      text: "pregxxy.book.patterns.spells.get_age.details.1"
     }
   ],
 }

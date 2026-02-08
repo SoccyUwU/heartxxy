@@ -7,16 +7,18 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getEntity
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.misc.MediaConstants
-import at.petrak.hexcasting.common.lib.HexDamageTypes
 import at.petrak.hexcasting.common.lib.HexItems
 import io.github.soccyuwu.pregxxy.casting.mishaps.MishapCantBreed
 import net.minecraft.world.entity.AgeableMob
+import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.Mob
 import net.minecraft.world.entity.NeutralMob
+import net.minecraft.world.entity.animal.Animal
+import net.minecraft.world.entity.animal.allay.Allay
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon
 import net.minecraft.world.entity.item.FallingBlockEntity
-import net.minecraft.world.entity.monster.Enemy
 import net.minecraft.world.entity.monster.Monster
+import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Blocks
@@ -29,11 +31,11 @@ object OpGreaterBreed : SpellAction {
     override fun execute(args: List<Iota>, env: CastingEnvironment): SpellAction.Result {
         val target = args.getEntity(0, argc)
         env.assertEntityInRange(target)
-        if(target !is Mob){
+        if(target is Player || target !is Mob){
             throw MishapCantBreed(target, true)
         }
-        if(target is Monster || target is NeutralMob || target is Enemy) {
-            if (target.health >= max(target.maxHealth / 50, 1.0f)) {
+        if(target !is Animal && (target is Monster || target is NeutralMob)) {
+            if (target.health >= max(target.maxHealth / 20, 1.0f)) {
                 throw MishapCantBreed(target, true)
             }
         }
@@ -47,31 +49,33 @@ object OpGreaterBreed : SpellAction {
 
     private data class Spell(val target: Mob) : RenderedSpell {
         override fun cast(env: CastingEnvironment) {
+            // glass the dragon (with the player as origin because the dragon
+            // is just quirky like that
             if(target is EnderDragon){
-                target.hurt(env.world.level.damageSources().source(HexDamageTypes.OVERCAST, env.castingEntity)
-                    , target.health * 999)
+                target.kill()
                 val egg = Blocks.DRAGON_EGG.defaultBlockState()
                 FallingBlockEntity.fall(env.world.level, target.blockPosition(), egg)
+                FallingBlockEntity.fall(env.world.level, target.blockPosition().above(1), egg)
                 return
             }
-            target.hurt(env.world.level.damageSources().source(HexDamageTypes.OVERCAST)
-                , target.health * 999)
-            if(target is AgeableMob && target.age >= 0){
-                var child = target.getBreedOffspring(env.world.level, target)
+            // otherwise glass it and split it
+            target.kill()
+            for (i in -1..1 step 2) {
+                var child : Mob? = null
+                if(target is AgeableMob && target.age >= 0){
+                    child = target.getBreedOffspring(env.world.level, target)
+                }
+                if(target is Allay){
+                    child = EntityType.ALLAY.create(env.world.level)
+                }
                 if (child !== null) {
-                    child.age = -24000
+                    if(child is AgeableMob) {
+                        child.age = -24000
+                    }
                     child.moveTo(target.position())
-                    child.setDeltaMovement(0.2, 0.2, 0.2)
+                    child.setDeltaMovement(0.2 * i, 0.2, 0.2 * i)
                     env.world.level.addFreshEntity(child)
                 }
-                child = target.getBreedOffspring(env.world.level, target)
-                if (child !== null) {
-                    child.age = -24000
-                    child.moveTo(target.position())
-                    child.setDeltaMovement(-0.2, 0.2, -0.2)
-                    env.world.level.addFreshEntity(child)
-                }
-                return
             }
 
             // if all else fails just crystallize the fucker

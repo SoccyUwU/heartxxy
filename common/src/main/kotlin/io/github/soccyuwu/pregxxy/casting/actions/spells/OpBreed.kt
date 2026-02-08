@@ -10,7 +10,6 @@ import at.petrak.hexcasting.api.misc.MediaConstants
 import io.github.soccyuwu.pregxxy.casting.mishaps.MishapCantBreed
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.animal.Animal
-import net.minecraft.world.entity.npc.Villager
 import net.minecraft.world.entity.player.Player
 
 object OpBreed : SpellAction {
@@ -25,16 +24,13 @@ object OpBreed : SpellAction {
 
         return SpellAction.Result(
             Spell(target),
-            (10 * MediaConstants.DUST_UNIT).toLong(),
+            (10 * MediaConstants.DUST_UNIT),
             listOf(ParticleSpray.cloud(target.position().add(0.0, target.eyeHeight / 2.0, 0.0), 1.0))
         )
     }
 
     private data class Spell(val target: Entity) : RenderedSpell {
         override fun cast(env: CastingEnvironment) {
-            if(target is Villager){
-                target.canBreed()
-            }
             if(target is Animal){
                 target.age = 0
                 target.setInLove(env.castingEntity as? Player)
