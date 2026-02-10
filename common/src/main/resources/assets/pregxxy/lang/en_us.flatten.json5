@@ -3,10 +3,10 @@
   "pregxxy.book.patterns.spells.pregxxy.breed.details.1": "Puts the target in breeding mood. Mishaps if used on a creature which can't breed. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.",
   "pregxxy.book.patterns.spells.pregxxy.breed.details.2": "A subtle but rudimentary manipulation of minds, only animals are simple enough to be receptive.",
   "pregxxy.book.patterns.spells.nurture.name": "Nurture",
-  "pregxxy.book.patterns.spells.nurture.details.1": "Expedites the growth of the target as if it was fed a suitable food.Costs 1 $(l:items/amethyst)$(item)Amethyst Dusts/$. Harmless if not pointless to fully matured subjects.",
+  "pregxxy.book.patterns.spells.nurture.details.1": "Expedites the growth of the target as if it was fed a suitable food. Costs 2 $(l:items/amethyst)$(item)Amethyst Dusts/$. Harmless if not pointless to fully matured subjects.",
   "pregxxy.book.patterns.spells.super_pregxxy.name": "Greater Breed",
   "pregxxy.book.patterns.spells.super_pregxxy.details.1": "Instantly kills the target, splitting its matter and media to form two children. Creatures without any form of offspring will crystallize into media instead. Inanimate entities cause the spell to mishap.",
-  "pregxxy.book.patterns.spells.super_pregxxy.details.2": "Costs one $(l:items/amethyst)$(item)Amethyst Shard/$ per health point on the target.$(p)Crystallization yields 2 $(l:items/amethyst)$(item)Amethyst Dust/$ per health point.$(p)Hostile creatures will resist the attempt unless below 5% health or at 1 hp. $(p)The dragon's single-minded task of protection means the spell will yield dragon eggs. Certain bands of draconic mages may be upset by this.",
+  "pregxxy.book.patterns.spells.super_pregxxy.details.2": "Costs one $(l:items/amethyst)$(item)Amethyst Shard/$ per target hp. The living media nature of Allays requires far more media to reconstruct: around 30 shards. $(br)Crystallization yields 2 $(l:items/amethyst)$(item)Amethyst Dust/$ per hp.$(p)Hostile creatures will resist the attempt unless below 5%% health or at 1 hp. $(p)The dragon's single-minded task of protection means the spell will yield dragon eggs. Certain bands of draconic mages may be upset by this.",
   "pregxxy.book.patterns.spells.get_age.name": "Cron's Purification",
   "pregxxy.book.patterns.spells.get_age.details.1": "Returns the age of the target in ticks. Negative values indicate time to adulthood while positive indicates breeding cooldown.$(p)Produces garbage if the target has no age.",
 

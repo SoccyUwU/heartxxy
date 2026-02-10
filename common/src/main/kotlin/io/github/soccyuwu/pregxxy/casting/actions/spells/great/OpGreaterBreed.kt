@@ -40,9 +40,13 @@ object OpGreaterBreed : SpellAction {
             }
         }
 
+        var spellCost = max(target.health, 1.0f) * MediaConstants.SHARD_UNIT
+        if(target is Allay){
+            spellCost = 150f * MediaConstants.DUST_UNIT
+        }
         return SpellAction.Result(
             Spell(target),
-            (max(target.health, 1.0f) * MediaConstants.SHARD_UNIT).toLong(),
+            spellCost.toLong(),
             listOf(ParticleSpray.cloud(target.position().add(0.0, target.eyeHeight / 2.0, 0.0), 3.0))
         )
     }
