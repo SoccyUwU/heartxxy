@@ -24,7 +24,7 @@ object OpBreed : SpellAction {
 
         return SpellAction.Result(
             Spell(target),
-            (10 * MediaConstants.DUST_UNIT),
+            MediaConstants.SHARD_UNIT,
             listOf(ParticleSpray.cloud(target.position().add(0.0, target.eyeHeight / 2.0, 0.0), 1.0))
         )
     }
