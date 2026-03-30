@@ -19,6 +19,7 @@ import net.minecraft.world.entity.Mob
 import net.minecraft.world.entity.NeutralMob
 import net.minecraft.world.entity.animal.Animal
 import net.minecraft.world.entity.animal.allay.Allay
+import net.minecraft.world.entity.boss.EnderDragonPart
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon
 import net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhase
 import net.minecraft.world.entity.item.FallingBlockEntity
@@ -35,8 +36,11 @@ object OpGreaterBreed : SpellAction {
     override val argc = 1
 
     override fun execute(args: List<Iota>, env: CastingEnvironment): SpellAction.Result {
-        val target = args.getEntity(0, argc)
+        var target = args.getEntity(0, argc)
         env.assertEntityInRange(target)
+        if(target is EnderDragonPart){
+            target = target.parentMob
+        }
         if(target is Player || target !is Mob){
             throw MishapCantBreed(target, true)
         }
