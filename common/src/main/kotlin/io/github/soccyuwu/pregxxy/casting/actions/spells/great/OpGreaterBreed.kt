@@ -82,7 +82,7 @@ object OpGreaterBreed : SpellAction {
                 if(env.castingEntity !== null && env.castingEntity is Player){
                     attacker = env.castingEntity as Player
                 } else{
-                    val fakeProfile = GameProfile(UUID.randomUUID(), "[John Dragonslayer]")
+                    val fakeProfile = GameProfile(UUID.randomUUID(), "John Dragonslayer")
                     attacker = ServerPlayer(env.world.server, env.world, fakeProfile)
                 }
                 target.hurt(damageSources.playerAttack(attacker), target.health * 4 - 4)
