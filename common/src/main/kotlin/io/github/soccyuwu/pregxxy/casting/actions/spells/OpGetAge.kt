@@ -4,8 +4,8 @@ import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getEntity
-import at.petrak.hexcasting.api.casting.iota.GarbageIota
 import at.petrak.hexcasting.api.casting.iota.Iota
+import at.petrak.hexcasting.api.casting.iota.NullIota
 import net.minecraft.world.entity.AgeableMob
 
 object OpGetAge : ConstMediaAction {
@@ -17,7 +17,7 @@ object OpGetAge : ConstMediaAction {
         return if (ent is AgeableMob){
             ent.age.asActionResult
         }else{
-            listOf(GarbageIota())
+            listOf(NullIota())
         }
     }
 }

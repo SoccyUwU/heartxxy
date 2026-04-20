@@ -8,7 +8,7 @@
   "pregxxy.book.patterns.spells.super_pregxxy.details.1": "Instantly kills the target, splitting its matter and media to form two children. Creatures without any form of offspring will crystallize into media instead. Inanimate entities cause the spell to mishap.",
   "pregxxy.book.patterns.spells.super_pregxxy.details.2": "Costs one $(l:items/amethyst)$(item)Amethyst Shard/$ per target hp. The living media nature of Allays requires far more media to reconstruct: around 30 shards. $(br)Crystallization yields 2 $(l:items/amethyst)$(item)Amethyst Dust/$ per hp.$(p)Hostile creatures will resist the attempt unless below 5%% health or at 1 hp. $(p)The dragon's single-minded task of protection means the spell will yield dragon eggs. Certain bands of draconic mages may be upset by this.",
   "pregxxy.book.patterns.spells.get_age.name": "Cron's Purification",
-  "pregxxy.book.patterns.spells.get_age.details.1": "Returns the age of the target in ticks. Negative values indicate time to adulthood while positive indicates breeding cooldown.$(p)Produces garbage if the target has no age.",
+  "pregxxy.book.patterns.spells.get_age.details.1": "Returns the age of the target in ticks. Negative values indicate time to adulthood while positive indicates breeding cooldown.$(p)Returns null if the target has no conventional age.",
 
   hexcasting: {
     action: {
